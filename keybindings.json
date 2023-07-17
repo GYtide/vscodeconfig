@@ -1,0 +1,43 @@
+// 将键绑定放在此文件中以覆盖默认值auto[]
+[
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "alt+x", // 你想要的快捷键
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "node $(echo \"${file}\" | sed 's/\\/\//g')\n\n\n"
+        },
+        "when": "editorTextFocus && !terminalFocus && !inDebugRepl && editorLangId == 'javascript'"
+    },
+    {
+        "key": "ctrl+enter", // 你想要的快捷键
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "node $(echo \"${file}\" | sed 's/\\/\//g')\n"
+        },
+        "when": "editorTextFocus && !terminalFocus && !inDebugRepl && editorLangId == 'javascript'"
+    },
+    {
+        "key": "ctrl+enter", // 你想要的快捷键
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "bash $(echo \"${file}\")\n"
+        },
+        "when": "editorTextFocus && !terminalFocus && !inDebugRepl && editorLangId == 'shellscript'"
+    },
+    {
+        "key": "ctrl+enter", // 你想要的快捷键
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "gcc $(echo \"${file}\")\n"
+        },
+        "when": "editorTextFocus && !terminalFocus && !inDebugRepl && editorLangId == 'cpp'"
+    }
+]
